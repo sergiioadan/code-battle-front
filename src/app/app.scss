@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0f1624, #1c1f26);
+  color: #fff;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: #0b0f1a;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00aaff;
+}
+
+.app-nav a {
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.app-nav a:hover {
+  color: #00aaff;
+  text-decoration: underline;
+}
+
+.main-content {
+  padding: 40px 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.question-box {
+  background-color: #20232a;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.question-title {
+  font-size: 22px;
+  color: #66cfff;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.answer-btn {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answer-btn:hover {
+  background-color: #008fcc;
+}

@@ -1,0 +1,38 @@
+<div class="contenedor-juego">
+  <h1 class="titulo">Variables por niveles</h1>
+
+  <div class="nivel-selector">
+    <label for="nivel">Selecciona un nivel:</label>
+    <select id="nivel" [(ngModel)]="nivelActual" (change)="cambiarNivel()">
+      <option value="tipos">Tipos de datos</option>
+      <option value="constantes" disabled>Constantes vs Variables 🔒</option>
+      <option value="tipado" disabled>Tipado 🔒</option>
+      <option value="por_defecto" disabled>Valores por defecto 🔒</option>
+      <option value="listas" disabled>Arrays y Listas 🔒</option>
+    </select>
+  </div>
+
+  <div class="valor">{{ actual.valor }}</div>
+
+  <div class="opciones">
+    <button
+      class="boton"
+      *ngFor="let opcion of actual?.opciones"
+      (click)="seleccionar(opcion)"
+      [disabled]="respondido"
+    >
+      {{ opcion }}
+    </button>
+  </div>
+
+  <div class="resultado">{{ mensajeResultado }}</div>
+  <div class="puntaje">Puntos: {{ puntuacion }} / {{ totalRespuestas }}</div>
+
+  <button
+    class="boton boton-reiniciar"
+    *ngIf="mostrarReiniciar"
+    (click)="reiniciar()"
+  >
+    🔄 Reintentar Nivel
+  </button>
+</div>

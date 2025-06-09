@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+/* Colores base */
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --primary-color: #3b82f6;
+  --text-color: #f1f5f9;
+  --secondary-text: #94a3b8;
+  --border-radius: 12px;
+}
+
+/* Estilos globales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Tarjetas */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Botones */
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+/* Texto secundario */
+.text-muted {
+  color: var(--secondary-text);
+}

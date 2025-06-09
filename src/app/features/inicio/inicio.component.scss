@@ -1,0 +1,42 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1c1f26;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-title span {
+  color: #00aaff; /* Azul estilo op.gg */
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #b0b3b8;
+}
+
+.start-button {
+  background-color: #00aaff;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #008fcc;
+}
