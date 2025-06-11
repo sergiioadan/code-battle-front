@@ -4,11 +4,9 @@
   <div class="nivel-selector">
     <label for="nivel">Selecciona un nivel:</label>
     <select id="nivel" [(ngModel)]="nivelActual" (change)="cambiarNivel()">
-      <option value="tipos">Tipos de datos</option>
-      <option value="constantes" disabled>Constantes vs Variables 🔒</option>
-      <option value="tipado" disabled>Tipado 🔒</option>
-      <option value="por_defecto" disabled>Valores por defecto 🔒</option>
-      <option value="listas" disabled>Arrays y Listas 🔒</option>
+     <option *ngFor="let nivel of niveles" [value]="nivel.clave" [disabled]="nivel.bloqueado">
+          {{ nivel.nombre }} {{ nivel.bloqueado ? '🔒' : '' }}
+    </option>
     </select>
   </div>
 
@@ -26,7 +24,9 @@
   </div>
 
   <div class="resultado">{{ mensajeResultado }}</div>
-  <div class="puntaje">Puntos: {{ puntuacion }} / {{ totalRespuestas }}</div>
+  <div class="puntos">Respuestas correctas: {{ totalAciertos }} / 10</div>
+  <div class="puntos">Puntos: {{ puntuacion }}</div>
+
 
   <button
     class="boton boton-reiniciar"

@@ -1,1 +1,11 @@
-<p>registro works!</p>
+<div class="registro-container">
+  <h2>Registro</h2>
+
+<input [(ngModel)]="username" placeholder="Nombre de usuario" />
+<input [(ngModel)]="password" type="password" placeholder="Contraseña" />
+<button (click)="register()">Registrarse</button>
+
+<div *ngIf="message" [ngClass]="{ 'success-msg': success, 'error-msg': !success }">
+  {{ message }}
+</div>
+
