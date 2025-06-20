@@ -3,30 +3,38 @@
 
   <div class="nivel-selector">
     <label for="nivel">Selecciona un nivel:</label>
-    <select id="nivel" [(ngModel)]="nivelActual" (change)="cambiarNivel()">
-     <option *ngFor="let nivel of niveles" [value]="nivel.clave" [disabled]="nivel.bloqueado">
-          {{ nivel.nombre }} {{ nivel.bloqueado ? '🔒' : '' }}
-    </option>
+    <select
+      id="nivel"
+      [ngModel]="nivelActual"
+      (ngModelChange)="onNivelChange($event)"
+    >
+      <option
+        *ngFor="let nivel of niveles"
+        [ngValue]="nivel.clave"
+        [disabled]="nivel.bloqueado"
+      >
+        {{ nivel.nombre }} {{ nivel.bloqueado ? '🔒' : '' }}
+      </option>
     </select>
   </div>
 
-  <div class="valor">{{ actual.valor }}</div>
+ <div class="valor" @fadeIn>{{ actual.valor }}</div>
 
-  <div class="opciones">
-    <button
-      class="boton"
-      *ngFor="let opcion of actual?.opciones"
-      (click)="seleccionar(opcion)"
-      [disabled]="respondido"
-    >
-      {{ opcion }}
-    </button>
-  </div>
+<div class="opciones" @fadeIn>
+  <button
+    class="boton"
+    *ngFor="let opcion of actual.opciones"
+    (click)="seleccionar(opcion)"
+    [disabled]="respondido"
+  >
+    {{ opcion }}
+  </button>
+</div>
+
 
   <div class="resultado">{{ mensajeResultado }}</div>
   <div class="puntos">Respuestas correctas: {{ totalAciertos }} / 10</div>
   <div class="puntos">Puntos: {{ puntuacion }}</div>
-
 
   <button
     class="boton boton-reiniciar"

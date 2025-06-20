@@ -5,16 +5,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../shared/services/auth.service';
 import { ProgressService } from './progress.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NIVELES } from '../../config/niveles.config';
 import { PREGUNTAS } from '../../config/preguntas.config';
+import {
+  trigger,
+  transition,
+  style,
+  animate
+} from '@angular/animations';   
 
 @Component({
   selector: 'app-question',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './question.html',
-  styleUrls: ['./question.scss']
+  styleUrls: ['./question.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.9)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'scale(1)' })),
+      ])
+    ])
+  ]
 })
 export class QuestionComponent implements OnInit {
   nivelActual: Nivel = 'tipos';
@@ -31,7 +45,7 @@ export class QuestionComponent implements OnInit {
 
   niveles = NIVELES.map(n => ({
     ...n,
-    bloqueado: n.clave === 'tipos',
+    bloqueado: n.clave !== 'tipos', // Solo el primero desbloqueado por defecto
     aciertos: 0,
     puntuacion: 0
   }));
@@ -40,36 +54,51 @@ export class QuestionComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private progressService: ProgressService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     const username = this.authService.getCurrentUsername();
 
+    // Escuchar cambios de ruta
     this.route.paramMap.subscribe(params => {
       const nivelParam = params.get('nivel') as Nivel;
       if (nivelParam) {
         this.nivelActual = nivelParam;
-        this.cambiarNivel();
+        this.totalAciertos = 0; // Reiniciar aciertos al cambiar nivel
+        this.progressService.getProgress(username).subscribe(progreso => {
+          this.actualizarNiveles(progreso);
+
+          // Verificar si el nivel está desbloqueado
+          const bloqueado = this.niveles.find(n => n.clave === this.nivelActual)?.bloqueado;
+          if (bloqueado) {
+            this.router.navigate(['/seleccion-nivel']);
+          } else {
+            this.cambiarNivel();
+          }
+        });
       }
     });
+  }
 
-    this.progressService.getProgress(username).subscribe(progreso => {
-      for (let i = 0; i < this.niveles.length; i++) {
-        const nivel = this.niveles[i];
-        const data = progreso[nivel.clave];
+  actualizarNiveles(progreso: any): void {
+    for (let i = 0; i < this.niveles.length; i++) {
+      const nivel = this.niveles[i];
+      const data = progreso[nivel.clave];
 
-        if (data && data.hits >= 7) {
+      if (data) {
+        nivel.aciertos = data.hits;
+        nivel.puntuacion = data.points;
+
+        if (data.hits >= 7) {
           nivel.bloqueado = false;
-          nivel.aciertos = data.hits;
-          nivel.puntuacion = data.points;
-
           if (i + 1 < this.niveles.length) {
             this.niveles[i + 1].bloqueado = false;
           }
         }
       }
-    });
+    }
   }
 
   cambiarNivel(): void {
@@ -79,6 +108,7 @@ export class QuestionComponent implements OnInit {
     this.totalRespuestas = 0;
     this.mostrarReiniciar = false;
     this.mensajeResultado = '';
+    this.totalAciertos = 0;
     this.mostrarSiguiente();
   }
 
@@ -133,7 +163,7 @@ export class QuestionComponent implements OnInit {
   finalizarNivel(): void {
     this.mostrarReiniciar = true;
 
-    if (this.puntuacion >= 7) {
+    if (this.totalAciertos >= 7) {
       this.mensajeResultado = '🎉 ¡Muy bien! Has desbloqueado el siguiente nivel.';
       const indexActual = this.niveles.findIndex(n => n.clave === this.nivelActual);
       if (indexActual >= 0 && indexActual + 1 < this.niveles.length) {
@@ -173,9 +203,23 @@ export class QuestionComponent implements OnInit {
         }
       });
   }
+  onNivelChange(nuevaClave: Nivel): void {
+  const nivelSeleccionado = this.niveles.find(n => n.clave === nuevaClave);
+
+  if (nivelSeleccionado?.bloqueado) {
+    // Evita cambiar si está bloqueado
+    return;
+  }
+
+  this.nivelActual = nuevaClave;
+
+  // Navega usando router para actualizar la ruta
+  this.router.navigate(['/play', nuevaClave]);
+}
+
 
   reiniciar(): void {
-    this.cambiarNivel();
     this.totalAciertos = 0;
+    this.cambiarNivel();
   }
 }

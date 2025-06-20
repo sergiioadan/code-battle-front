@@ -1,14 +1,26 @@
 .contenedor-juego {
+  margin-top: 80px;
+  padding: 20px;
   max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 16px;
-  background-color: #1c1f26;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-out;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .titulo {
   font-size: 28px;
@@ -81,4 +93,20 @@
 
 .boton-reiniciar {
   margin-top: 30px;
+}
+
+.contenedor-juego {
+  text-align: center;
+}
+
+.nivel-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+.valor, .resultado {
+  text-align: center;
 }

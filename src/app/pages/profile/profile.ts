@@ -79,3 +79,4 @@ export class ProfileComponent implements OnInit {
     return liga ? `/assets/ligas/${liga.icono}` : '/assets/ligas/default.png';
   }
 }
+  
