@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('jwtToken');
     if (token) {
       return true;
     }

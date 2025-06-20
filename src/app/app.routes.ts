@@ -14,14 +14,14 @@ import { ProfileComponent } from './pages/profile/profile';
 export const routes: Routes = [
   { path: 'seleccion-nivel', component: LevelSelectionComponent },
   { path: 'play/:nivel', loadComponent: () => import('./questions/question/question').then(m => m.QuestionComponent) },
-  { path: '', redirectTo: 'seleccion-nivel', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'juego', component: QuestionComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'ranking', component: RankingComponent },
   {path: 'profile', component: ProfileComponent},
+  {path: 'profile/:username', component: ProfileComponent},
   { path: 'dashboard', loadComponent: () => import('./pages/dashboard/dashboard').then(m => m.DashboardComponent), canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'juego', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'juego' }
 ];

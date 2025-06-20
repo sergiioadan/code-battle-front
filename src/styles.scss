@@ -56,3 +56,6 @@ h1, h2, h3 {
 .text-muted {
   color: var(--secondary-text);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

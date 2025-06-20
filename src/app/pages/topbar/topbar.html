@@ -1,0 +1,35 @@
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="assets/logo/codebattles-logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <div class="search-box">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="buscarUsuario()"
+    (keydown.arrowDown)="seleccionarSiguiente()"
+    (keydown.arrowUp)="seleccionarAnterior()"
+    (keydown.enter)="irSeleccionado()"
+    placeholder="Buscar jugador..."
+  />
+  <ul class="suggestions" *ngIf="usuariosFiltrados.length">
+    <li
+      *ngFor="let usuario of usuariosFiltrados; let i = index"
+      [class.selected]="i === indiceSeleccionado"
+      (click)="irAlPerfil(usuario)"
+    >
+      {{ usuario.username }}
+    </li>
+  </ul>
+</div>
+
+
+  <div class="topbar-icons">
+    <button (click)="irADashboard()"><i class="fas fa-home"></i></button>
+    <button (click)="irAJugar()"><i class="fas fa-gamepad"></i></button>
+    <button (click)="irARanking()"><i class="fas fa-trophy"></i></button>
+    <button (click)="irAPerfil()"><i class="fas fa-user"></i></button>
+    <button (click)="logout()"><i class="fas fa-sign-out-alt"></i></button>
+  </div>
+</div>

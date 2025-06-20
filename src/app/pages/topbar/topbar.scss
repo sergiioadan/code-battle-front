@@ -1,0 +1,146 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #111827; // fondo oscuro elegante
+  border-bottom: 1px solid #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo {
+      height: 36px;
+    }
+
+    .search-box {
+      position: relative;
+
+      input {
+        padding: 8px 12px;
+        border-radius: 20px;
+        border: 1px solid #374151;
+        background-color: #1f2937;
+        color: #f9fafb;
+        width: 180px;
+        transition: width 0.3s ease;
+        font-size: 14px;
+
+        &:focus {
+          width: 250px;
+          outline: none;
+          border-color: #3b82f6;
+        }
+      }
+
+      .suggestions {
+        position: absolute;
+        top: 36px;
+        left: 0;
+        width: 100%;
+        background-color: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 4px;
+        color: #f3f4f6;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 10;
+
+        li {
+          padding: 8px 12px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #374151;
+          }
+        }
+      }
+    }
+  }
+
+  .topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #d1d5db;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #3b82f6;
+      }
+    }
+  }
+.topbar-left .logo {
+  height: 48px;
+  object-fit: contain;
+  margin-right: 16px;
+}
+
+.search-box input {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 0 3px #4ea1ff4f;
+}
+  .search-box {
+  position: relative;
+  width: 250px;
+
+  input {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+
+    li {
+      padding: 8px 12px;
+      cursor: pointer;
+
+      &:hover,
+      &.selected {
+        background-color: #444;
+      }
+    }
+  }
+}
+
+}
+
