@@ -1,1 +1,11 @@
-<p>ranking works!</p>
+<div class="ranking-container">
+  <h2>🏆 Clasificación General</h2>
+  <ul class="ranking-list">
+    <li *ngFor="let player of topPlayers; let i = index">
+      <span class="medal">{{ getMedal(i) }}</span>
+      <span>{{ player.username }}</span> - {{ player.totalPoints }} pts
+    </li>
+  </ul>
+  <button (click)="volverAlInicio()">⬅ Volver</button>
+
+</div>

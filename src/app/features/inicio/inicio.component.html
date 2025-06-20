@@ -1,5 +1,13 @@
-<div class="home-container">
-  <h1 class="game-title">⚔️ Bienvenido a <span>CodeBattle</span></h1>
-  <p class="game-subtitle">Demuestra tus habilidades resolviendo desafíos de programación.</p>
-  <button class="start-button">Comenzar juego</button>
+<div class="inicio-container">
+  <h1>🏆 Bienvenido a CodeBattle</h1>
+  <p>Demuestra tus habilidades resolviendo desafíos de programación.</p>
+
+  <div class="botones">
+    <button (click)="irALogin()">🔐 Iniciar sesión</button>
+    <button (click)="irARegistro()">📝 Registrarse</button>
+  </div>
+
+  <div class="ranking-link">
+    <button (click)="irARanking()">🏆 Top 10 jugadores</button>
+  </div>
 </div>

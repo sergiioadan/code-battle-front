@@ -1,0 +1,14 @@
+<div class="level-container">
+  <div *ngFor="let nivel of niveles" class="level-card" [class.locked]="nivel.bloqueado">
+    <h3>{{ nivel.nombre }}</h3>
+    <p>Puntos: {{ nivel.puntuacion }}</p>
+  <p>Aciertos: {{ nivel.aciertos }}/10</p>
+
+
+    <button 
+      [disabled]="nivel.bloqueado"
+      (click)="jugarNivel(nivel.clave)">
+      {{ nivel.bloqueado ? '🔒 Bloqueado' : '🎮 Jugar' }}
+    </button>
+  </div>
+</div>

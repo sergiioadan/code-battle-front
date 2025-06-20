@@ -1,0 +1,52 @@
+<div class="perfil-container">
+  <h1 class="titulo">Perfil de {{ jugador.username }}</h1>
+
+  <div class="perfil-grid">
+    <!-- Columna izquierda -->
+    <div class="perfil-info">
+      <div class="perfil-card">
+        <h2>Resumen</h2>
+        <p><strong>Usuario:</strong> {{ jugador.username }}</p>
+        <p><strong>Total puntos:</strong> {{ jugador.totalPuntos }}</p>
+        <p><strong>Posición en ranking:</strong> {{ jugador.posicion }}</p>
+        <p><strong>Liga:</strong> {{ jugador.liga }}</p>
+      </div>
+
+      <div class="perfil-card liga-card">
+        <h2>Liga actual</h2>
+        <div class="liga-contenedor">
+          <img [src]="getIconoLiga(jugador.liga)" [alt]="jugador.liga" class="liga-icono" />
+          <div class="liga-texto">
+            <p class="liga-nombre"><strong>{{ jugador.liga }}</strong></p>
+            <p>¡Sigue jugando para alcanzar la siguiente liga!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="perfil-estadisticas">
+      <div class="perfil-card">
+        <h2>Progreso por nivel</h2>
+        <table class="tabla-niveles">
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>Puntos</th>
+              <th>Aciertos</th>
+              <th>Desbloqueado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nivel of jugador.niveles">
+              <td>{{ nivel.nombre }}</td>
+              <td>{{ nivel.puntos }}</td>
+              <td>{{ nivel.aciertos }}/10</td>
+              <td>{{ nivel.desbloqueado ? '✅' : '🔒' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

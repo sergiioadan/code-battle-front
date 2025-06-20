@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -8,19 +10,26 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss'],
-  imports: [FormsModule]
+  imports: [FormsModule,CommonModule]
 })
-export class InicioComponent {
-  nombre = '';
+export class InicioComponent implements OnInit {
+  topJugadores: { username: string, totalPoints: number }[] = [];
 
-  constructor(private router: Router) {}
-
-  comenzarJuego() {
-    if (this.nombre.trim()) {
-      localStorage.setItem('jugador', this.nombre);
-      this.router.navigate(['/juego']);
-    } else {
-      alert('Por favor, introduce tu nombre.');
+  constructor(private http: HttpClient,private router: Router) {}
+    irALogin() {
+      this.router.navigate(['/login']);
     }
+
+    irARegistro() {
+      this.router.navigate(['/register']);
+    }
+
+    irARanking() {
+      this.router.navigate(['/ranking']);
+    }
+
+  ngOnInit(): void {
+    this.http.get<any[]>('http://localhost:8080/ranking')
+      .subscribe(data => this.topJugadores = data);
   }
 }

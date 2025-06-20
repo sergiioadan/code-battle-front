@@ -1,0 +1,128 @@
+.perfil-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.perfil-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.perfil-info, .perfil-estadisticas {
+  flex: 1;
+  min-width: 300px;
+}
+
+.perfil-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+.perfil-card p {
+  color: #333; // mucho más visible que #aaa
+}
+.perfil-card p strong {
+  color: #222;
+}
+
+.tabla-niveles {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-niveles th, .tabla-niveles td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.liga.frontend { color: #b0b0b0; font-weight: bold; }
+.liga.junior { color: #5a9bd4; font-weight: bold; }
+.liga.mid { color: #4caf50; font-weight: bold; }
+.liga.senior { color: #f9a825; font-weight: bold; }
+.liga.legend { color: #ef5350; font-weight: bold; }
+.liga-icono {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+}
+.liga-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.liga-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.liga-icono {
+  width: 100px;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.liga-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liga-nombre {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+}
+.tabla-niveles {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+
+  th {
+    padding: 0.75rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    background-color: #f0f4fa;
+  }
+
+  td {
+    padding: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+    color: #111;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9fbfc;
+  }
+
+  tr:hover {
+    background-color: #e6f0ff;
+  }
+}
+.perfil-liga-card img {
+  width: 1180px; /* ajusta según te parezca */
+  height: auto;
+  margin-right: 1rem;
+}
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

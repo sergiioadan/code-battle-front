@@ -24,13 +24,14 @@
            "src/styles.scss"
             ],
 
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-                "output": "/"
-              }
-            ]
+                  "assets": [
+          "src/assets",
+          {
+            "glob": "**/*",
+            "input": "public",
+            "output": "/"
+          }
+        ]
           },
           "configurations": {
             "production": {

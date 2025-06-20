@@ -22,7 +22,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
         this.errorMessage = '';
-        this.router.navigate(['/juego']);
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         if (err.status === 403) {
