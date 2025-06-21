@@ -1,44 +1,61 @@
 .dashboard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0d1117;
-  min-height: 100vh;
-  padding-top: 80px;
-  color: #f0f0f0;
+  margin-top: 80px;
+  padding: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .dashboard-title {
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #58a6ff;
-  font-weight: 700;
+  font-size: 32px;
+  color: #00aaff;
+  margin-bottom: 30px;
 }
 
-.control-buttons {
+.dashboard-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 300px;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.control-buttons button {
-  background-color: #21262d;
-  color: #f0f0f0;
-  border: 1px solid #30363d;
-  padding: 16px;
-  font-size: 18px;
+.dashboard-btn {
+  background-color: #00aaff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-align: left;
-  padding-left: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 170, 255, 0.2);
+
+  &:hover {
+    background-color: #008ecc;
+    transform: scale(1.05);
+  }
+}
+.dashboard-btn {
+  animation: popIn 0.4s ease forwards;
 }
 
-.control-buttons button:hover {
-  background-color: #30363d;
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.dashboard-btn {
+  cursor: pointer;
 }
 
-.control-buttons button span {
-  margin-right: 12px;
-}

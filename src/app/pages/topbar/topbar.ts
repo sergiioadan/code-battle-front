@@ -66,7 +66,7 @@ indiceSeleccionado = -1;
   }
 
   irAJugar() {
-    this.router.navigate(['/jugar']);
+    this.router.navigate(['/seleccion-nivel']);
   }
 
   irARanking() {
@@ -79,6 +79,6 @@ indiceSeleccionado = -1;
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/']);
+    this.router.navigate(['/inicio']);
   }
 }

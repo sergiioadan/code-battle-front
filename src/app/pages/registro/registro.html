@@ -1,11 +1,23 @@
-<div class="registro-container">
-  <h2>Registro</h2>
+<div class="registro-wrapper">
+  <div class="registro-container">
+    <h2>Registro</h2>
 
-<input [(ngModel)]="username" placeholder="Nombre de usuario" />
-<input [(ngModel)]="password" type="password" placeholder="Contraseña" />
-<button (click)="register()">Registrarse</button>
+    <input type="text" [(ngModel)]="username" placeholder="Nombre de usuario" />
+    <p *ngIf="usernameError" class="error">{{ usernameError }}</p>
 
-<div *ngIf="message" [ngClass]="{ 'success-msg': success, 'error-msg': !success }">
-  {{ message }}
+    <input type="password" [(ngModel)]="password" placeholder="Contraseña" />
+    <p *ngIf="passwordError" class="error">{{ passwordError }}</p>
+
+    <button (click)="register()">Registrarse</button>
+
+    <p *ngIf="message" [ngClass]="{ 'error': !success, 'success': success }">{{ message }}</p>
+
+    <p class="alternativa">
+      ¿Ya tienes cuenta?
+      <a routerLink="/login" class="link">Inicia sesión aquí</a>
+    </p>
+  </div>
+
+  <!-- Logo al fondo después del formulario -->
+  <div class="logo-fondo"></div>
 </div>
-
