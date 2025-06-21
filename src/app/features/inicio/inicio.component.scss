@@ -1,32 +1,114 @@
+.inicio-wrapper {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh; /* Fija el alto para que el logo no empuje contenido */
+  overflow: hidden;
+  background-color: #0e1423;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.logo-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px; /* Aumentado */
+  height: 500px; /* Aumentado */
+  background-image: url('/assets/logo/codebattles-logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.05; /* Un poco más visible, sin molestar */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+
 .inicio-container {
   text-align: center;
   color: white;
-  padding: 2rem;
+  z-index: 1;
 }
 
-.botones button {
-  margin: 1rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
+.inicio-container h1 {
+  font-size: 36px;
+  color: #00aaff;
+  margin-bottom: 10px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.titulo {
+  font-weight: bold;
+}
+
+.resaltado {
+  color: #3399ff;
+  text-shadow: 0 0 8px #00aaff;
+}
+
+.descripcion {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.botones button,
+.ranking-link button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 14px;
   border-radius: 8px;
+  border: none;
+  background-color: white;
+  color: #1a1a1a;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.15);
 }
 
-.destacado {
+.botones button:hover,
+.ranking-link button:hover {
   background-color: #00aaff;
   color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
 }
 
-.ranking-text {
-  font-size: 1.1rem;
-  color: #fcd34d; // dorado
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
+.footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: #666;
+  z-index: 1;
+}
 
-  &:hover {
-    text-decoration: underline;
-    color: #ffd700;
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.035;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 0.07;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.035;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 4px #00aaff;
+  }
+  to {
+    text-shadow: 0 0 10px #00ccff, 0 0 20px #00aaff;
   }
 }

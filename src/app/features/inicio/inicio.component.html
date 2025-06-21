@@ -1,13 +1,19 @@
-<div class="inicio-container">
-  <h1>🏆 Bienvenido a CodeBattle</h1>
-  <p>Demuestra tus habilidades resolviendo desafíos de programación.</p>
+<div class="inicio-wrapper">
+  <div class="logo-fondo"></div>
 
-  <div class="botones">
-    <button (click)="irALogin()">🔐 Iniciar sesión</button>
-    <button (click)="irARegistro()">📝 Registrarse</button>
+  <div class="inicio-container">
+    <h1><span class="icono">🏆</span> <span class="titulo">Bienvenido a <span class="resaltado">CodeBattle</span></span></h1>
+    <p class="descripcion">Demuestra tus habilidades resolviendo desafíos de programación.</p>
+
+    <div class="botones">
+      <button (click)="irALogin()">🔐 Iniciar sesión</button>
+      <button (click)="irARegistro()">📝 Registrarse</button>
+    </div>
+
+    <div class="ranking-link">
+      <button (click)="irARanking()">🥇 Top 10 jugadores</button>
+    </div>
   </div>
 
-  <div class="ranking-link">
-    <button (click)="irARanking()">🏆 Top 10 jugadores</button>
-  </div>
+  <footer class="footer">⚔️ Desarrollado por Sergio Adán Ibañez</footer>
 </div>
