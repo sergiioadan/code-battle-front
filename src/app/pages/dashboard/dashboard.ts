@@ -13,11 +13,11 @@ export class DashboardComponent {
   constructor(private router: Router) {}
 
   irAInfoJugador() {
-    this.router.navigate(['/profile']); // Ajusta según tu ruta real
+    this.router.navigate(['/profile']);
   }
 
   irAEstadisticas() {
-    this.router.navigate(['/estadisticas']); // Ajusta según tu ruta real
+    this.router.navigate(['/estadisticas']);
   }
 
   jugar() {

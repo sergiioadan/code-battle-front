@@ -10,7 +10,7 @@ interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:8080/auth'; // Usa /auth si tienes proxy configurado
+  private readonly API_URL = 'https://code-battle-back.onrender.com/auth'; // Usa /auth si tienes proxy configurado
 
   constructor(private http: HttpClient) {}
 

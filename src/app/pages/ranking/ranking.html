@@ -1,11 +1,19 @@
 <div class="ranking-container">
-  <h2>🏆 Clasificación General</h2>
+  <h2 class="ranking-title">🏆 Clasificación General</h2>
+
   <ul class="ranking-list">
-    <li *ngFor="let player of topPlayers; let i = index">
+    <li *ngFor="let player of topPlayers; let i = index"
+        [ngClass]="{
+          'ranking-item': true,
+          'gold': i === 0,
+          'silver': i === 1,
+          'bronze': i === 2
+        }">
       <span class="medal">{{ getMedal(i) }}</span>
-      <span>{{ player.username }}</span> - {{ player.totalPoints }} pts
+      <span class="player-name">{{ player.username }}</span>
+      <span class="points">{{ player.totalPoints }} pts</span>
     </li>
   </ul>
-  <button (click)="volverAlInicio()">⬅ Volver</button>
 
+  <button class="back-button" (click)="volverAlInicio()">⬅ Volver</button>
 </div>

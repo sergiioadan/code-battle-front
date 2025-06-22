@@ -11,23 +11,24 @@
   padding: 20px;
 }
 
-
 .logo-fondo {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px; /* Aumentado */
-  height: 500px; /* Aumentado */
-  background-image: url('/assets/logo/codebattles-logo.png');
+  transform: translate(-50%, -35%);
+  width: 700px; /* Aumentado */
+  height: 700px; /* Aumentado */
+  background-image: url('/assets/logo/logo_inicio.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  opacity: 0.05; /* Un poco más visible, sin molestar */
-  transform: translate(-50%, -50%);
+  opacity: 0.03;
   pointer-events: none;
-  animation: pulse 6s ease-in-out infinite;
   z-index: 0;
+  animation: pulse 6s ease-in-out infinite;
 }
+
+
 
 
 .inicio-container {

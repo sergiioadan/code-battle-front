@@ -8,7 +8,7 @@ export interface Usuario {
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://code-battle-back.onrender.com';
 
   constructor(private http: HttpClient) {}
 

@@ -59,3 +59,11 @@
   cursor: pointer;
 }
 
+.dashboard-btn.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #aaa;
+  box-shadow: none;
+  transition: none;
+}
