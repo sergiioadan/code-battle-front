@@ -27,7 +27,7 @@ indiceSeleccionado = -1;
     return;
   }
 
-  this.http.get<any[]>(`http://localhost:8080/search?username=${this.searchTerm}`).subscribe(
+  this.http.get<any[]>(`https://code-battle-back.onrender.com/search?username=${this.searchTerm}`).subscribe(
     usuarios => {
       this.usuariosFiltrados = usuarios.slice(0, 5); // máximo 5 resultados
     },

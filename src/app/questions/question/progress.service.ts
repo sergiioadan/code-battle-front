@@ -20,11 +20,11 @@ export class ProgressService {
   constructor(private http: HttpClient) {}
 
  getProgress(username: string): Observable<ProgresoPorNivel> {
-  return this.http.get<ProgresoPorNivel>(`http://localhost:8080/progress?username=${username}`);
+  return this.http.get<ProgresoPorNivel>(`https://code-battle-back.onrender.com/progress?username=${username}`);
 }
 
 getRankingPosition(username: string) {
-  return this.http.get<number>(`http://localhost:8080/ranking/position/${username}`);
+  return this.http.get<number>(`https://code-battle-back.onrender.com/ranking/position/${username}`);
 }
   
 } 

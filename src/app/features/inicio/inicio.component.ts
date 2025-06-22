@@ -29,7 +29,7 @@ export class InicioComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/ranking')
+    this.http.get<any[]>('https://code-battle-back.onrender.com/ranking')
       .subscribe(data => this.topJugadores = data);
   }
 }

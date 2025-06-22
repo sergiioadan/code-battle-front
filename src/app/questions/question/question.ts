@@ -173,7 +173,7 @@ export class QuestionComponent implements OnInit {
       this.mensajeResultado = '❌ No te desanimes, vuelve a intentarlo. Necesitas mínimo 7 aciertos.';
     }
 
-    this.http.post('http://localhost:8080/points', {
+    this.http.post('https://code-battle-back.onrender.com/points', {
       player: this.authService.getCurrentUsername() || 'anonimo',
       nivel: this.nivelActual,
       points: this.puntuacion,
@@ -193,7 +193,7 @@ export class QuestionComponent implements OnInit {
       time: tiempo
     };
 
-    this.http.post<number>('http://localhost:8080/calculate', request)
+    this.http.post<number>('https://code-battle-back.onrender.com/calculate', request)
       .subscribe({
         next: (puntos) => {
           this.puntuacion += puntos;

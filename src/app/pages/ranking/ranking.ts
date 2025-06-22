@@ -19,7 +19,7 @@ export class RankingComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router,private location: Location) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/ranking').subscribe(data => {
+    this.http.get<any[]>('https://code-battle-back.onrender.com/ranking').subscribe(data => {
       this.topPlayers = data;
     });
   }
