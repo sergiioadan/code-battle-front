@@ -22,7 +22,7 @@ export class App {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const rutasSinTopbar = ['/inicio', '/login', '/register'];
+        const rutasSinTopbar = ['/inicio', '/login', '/register','/ranking'];
         const rutasConFondo = ['/login', '/register'];
 
         this.mostrarTopbar = !rutasSinTopbar.includes(event.urlAfterRedirects);

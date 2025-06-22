@@ -40,6 +40,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+
   cargarPerfil(username: string): void {
     this.jugador.username = username;
 
@@ -64,9 +65,19 @@ export class ProfileComponent implements OnInit {
 
       this.jugador.totalPuntos = total;
       this.jugador.liga = this.calcularLiga(total);
-      this.jugador.posicion = 0; // TODO: Posición real en ranking si implementas ranking global
+      this.progressService.getRankingPosition(username).subscribe({
+      next: posicion => {
+        this.jugador.posicion = posicion;
+      },
+      error: err => {
+        console.error('No se pudo obtener la posición del ranking', err);
+        this.jugador.posicion = -1;
+      }
+    });
+      
     });
   }
+
 
   calcularLiga(puntos: number): string {
     const ligas = ['Frontend', 'Junior', 'Mid', 'Senior', 'Architect', 'Legend'];

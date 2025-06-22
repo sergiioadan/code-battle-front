@@ -22,5 +22,9 @@ export class ProgressService {
  getProgress(username: string): Observable<ProgresoPorNivel> {
   return this.http.get<ProgresoPorNivel>(`http://localhost:8080/progress?username=${username}`);
 }
+
+getRankingPosition(username: string) {
+  return this.http.get<number>(`http://localhost:8080/ranking/position/${username}`);
+}
   
 } 
