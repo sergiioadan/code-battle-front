@@ -126,3 +126,77 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .perfil-container {
+    padding: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .perfil-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .perfil-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .liga-contenedor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .liga-icono {
+    width: 80px;
+    height: auto;
+    max-height: 80px;
+  }
+
+  .liga-texto {
+    align-items: center;
+  }
+
+  .liga-nombre {
+    font-size: 1.1rem;
+  }
+
+  .tabla-niveles {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .tabla-niveles table {
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+  }
+
+  .tabla-niveles th, .tabla-niveles td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .tabla-niveles {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+}
+.perfil-container {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .perfil-container {
+    padding-top: 70px;
+  }
+}
+

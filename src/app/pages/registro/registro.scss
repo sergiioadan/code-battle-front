@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 .registro-container {
   max-width: 360px;
   margin: 120px auto;
@@ -153,5 +160,40 @@ html, body {
   animation: pulse 6s ease-in-out infinite;
 }
 
+@media (max-width: 600px) {
+  .registro-container {
+    width: 90%;
+    max-width: 320px;
+    padding: 20px 15px;
+    margin: 40px 10px;
+  }
+
+  .registro-container input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .registro-container button {
+    width: 100%;
+    padding: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .registro-container h2 {
+    font-size: 22px;
+  }
+
+  .registro-container .alternativa {
+    font-size: 13px;
+  }
+
+  .logo-fondo {
+    width: 220px;
+    height: 220px;
+    margin-top: 30px;
+    opacity: 0.1;
+  }
+}
 
 
