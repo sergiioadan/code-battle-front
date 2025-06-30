@@ -67,3 +67,29 @@
   box-shadow: none;
   transition: none;
 }
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    margin-top: 70px;
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-buttons {
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 280px;
+  }
+}

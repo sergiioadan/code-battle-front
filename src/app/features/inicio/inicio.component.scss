@@ -113,3 +113,33 @@
     text-shadow: 0 0 10px #00ccff, 0 0 20px #00aaff;
   }
 }
+@media (max-width: 600px) {
+  
+
+  .inicio-container h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .botones button,
+  .ranking-link button {
+    width: 90%;
+    max-width: 280px;
+    padding: 12px 0;
+    margin: 8px 0;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  .footer {
+    font-size: 11px;
+    text-align: center;
+    padding: 0 10px;
+  }
+}

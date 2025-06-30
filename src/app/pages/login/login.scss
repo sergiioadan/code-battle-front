@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 .login-container {
   max-width: 400px;
   margin: 100px auto;
@@ -101,5 +108,37 @@ button {
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .login-container {
+    margin: 20px;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .logo-fondo {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    opacity: 0.1;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  input {
+    padding: 12px;
+  }
+
+  .registro-link {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
 
 
