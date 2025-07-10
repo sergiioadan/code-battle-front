@@ -9,6 +9,6 @@ export type Nivel =
   | 'constantes'
   | 'tipado'
   | 'por_defecto'
-  | 'prueba'
+  | 'operadores'
 
   | 'listas';
