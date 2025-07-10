@@ -6,6 +6,6 @@ export const NIVELES: { clave: Nivel; nombre: string }[] = [
   { clave: 'tipado', nombre: 'Tipado' },
   { clave: 'por_defecto', nombre: 'Valores por defecto' },
   { clave: 'listas', nombre: 'Arrays y Listas' },
-  { clave: 'prueba', nombre: 'Pruerbas deraf' }
+  { clave: 'operadores', nombre: 'Operadores' }
 
 ];
