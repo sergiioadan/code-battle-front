@@ -337,7 +337,7 @@ tipado : [
 ]
 
 ,
-por_defecto = [
+por_defecto : [
   {
     valor: '¿Cuál es el valor por defecto de un `int` en Java?',
     opciones: ['0', 'null', 'undefined'],
