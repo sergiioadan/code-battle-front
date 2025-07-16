@@ -545,7 +545,314 @@ por_defecto :[
     opciones: ['Operador relacional', 'Operador lógico AND bit a bit', 'Operador ternario'],
     respuesta: 'Operador lógico AND bit a bit'
   }
+],
+condicionales : [
+  {
+    valor: '¿Qué permite hacer una estructura condicional?',
+    opciones: ['Repetir código varias veces', 'Tomar decisiones en el código', 'Declarar variables'],
+    respuesta: 'Tomar decisiones en el código'
+  },
+  {
+    valor: '¿Qué palabra clave inicia una condición en Java?',
+    opciones: ['else', 'switch', 'if'],
+    respuesta: 'if'
+  },
+  {
+    valor: '¿Qué palabra se usa para indicar el camino alternativo si la condición no se cumple?',
+    opciones: ['else', 'if', 'for'],
+    respuesta: 'else'
+  },
+  {
+    valor: 'if (edad >= 18) { ... } else { ... }',
+    opciones: ['Estructura condicional', 'Bucle infinito', 'Método abstracto'],
+    respuesta: 'Estructura condicional'
+  },
+  {
+    valor: '¿Qué hace else if en Java?',
+    opciones: ['Permite múltiples condiciones', 'Declara variables', 'Termina el programa'],
+    respuesta: 'Permite múltiples condiciones'
+  },
+  {
+    valor: '¿Qué evalúa un if?',
+    opciones: ['Una condición booleana', 'Un método', 'Un bucle'],
+    respuesta: 'Una condición booleana'
+  },
+  {
+    valor: 'if (cuentaActiva && edad >= 18) { ... }',
+    opciones: ['Ejecuta si ambas condiciones son verdaderas', 'Se ejecuta siempre', 'Genera error'],
+    respuesta: 'Ejecuta si ambas condiciones son verdaderas'
+  },
+  {
+    valor: 'else if se usa para...',
+    opciones: ['Evitar errores', 'Agregar condiciones adicionales', 'Cerrar el programa'],
+    respuesta: 'Agregar condiciones adicionales'
+  },
+  {
+    valor: 'En Java, if siempre requiere:',
+    opciones: ['Una condición booleana', 'Un bucle for', 'Un constructor'],
+    respuesta: 'Una condición booleana'
+  },
+  {
+    valor: 'if / else permite:',
+    opciones: ['Decidir entre dos caminos', 'Crear arrays', 'Inicializar variables'],
+    respuesta: 'Decidir entre dos caminos'
+  },
+  {
+    valor: '¿Cuál es la forma básica de un if?',
+    opciones: ['if { condición }', 'if (condición) { bloque }', 'if condición then'],
+    respuesta: 'if (condición) { bloque }'
+  },
+  {
+    valor: 'else if permite:',
+    opciones: ['Más de dos opciones', 'Repetir código', 'Salir del programa'],
+    respuesta: 'Más de dos opciones'
+  },
+  {
+    valor: 'En if / else el flujo de control es...',
+    opciones: ['Secuencial', 'Basado en condiciones', 'Siempre repetitivo'],
+    respuesta: 'Basado en condiciones'
+  },
+  {
+    valor: 'Un if anidado es...',
+    opciones: ['Un bucle infinito', 'Un if dentro de otro if', 'Una variable final'],
+    respuesta: 'Un if dentro de otro if'
+  },
+  {
+    valor: 'else if es útil cuando...',
+    opciones: ['Hay más de dos condiciones', 'Solo hay una opción', 'No hay condiciones'],
+    respuesta: 'Hay más de dos condiciones'
+  },
+  {
+    valor: 'if / else es...',
+    opciones: ['Un bucle', 'Un tipo de dato', 'Una estructura de control'],
+    respuesta: 'Una estructura de control'
+  },
+  {
+    valor: '¿Qué tipo de valor devuelve la condición en if?',
+    opciones: ['int', 'boolean', 'String'],
+    respuesta: 'boolean'
+  },
+  {
+    valor: 'if (activo) { ... } else { ... }',
+    opciones: ['Evalúa la variable activo', 'Crea un objeto', 'Llama a un método'],
+    respuesta: 'Evalúa la variable activo'
+  },
+  {
+    valor: '¿Para qué sirve else?',
+    opciones: ['Ejecutar si if es falso', 'Definir variables', 'Importar clases'],
+    respuesta: 'Ejecutar si if es falso'
+  },
+  {
+    valor: 'if / else if / else permite:',
+    opciones: ['Múltiples caminos', 'Solo un camino', 'Sin condiciones'],
+    respuesta: 'Múltiples caminos'
+  }
+],
+bucles : [
+  {
+    valor: '¿Qué es un bucle?',
+    opciones: ['Repetir un bloque de código', 'Declarar variables', 'Eliminar clases'],
+    respuesta: 'Repetir un bloque de código'
+  },
+  {
+    valor: '¿Qué hace el bucle for?',
+    opciones: ['Repite con inicio, condición y aumento', 'Detiene el programa', 'Declara métodos'],
+    respuesta: 'Repite con inicio, condición y aumento'
+  },
+  {
+    valor: 'for (int i=0; i<5; i++)',
+    opciones: ['Bucle for', 'Condicional', 'Clase abstracta'],
+    respuesta: 'Bucle for'
+  },
+  {
+    valor: '¿Qué evalúa el while?',
+    opciones: ['Condición antes de ejecutar', 'Condición después de ejecutar', 'Nada'],
+    respuesta: 'Condición antes de ejecutar'
+  },
+  {
+    valor: '¿Qué evalúa do-while?',
+    opciones: ['Condición antes de ejecutar', 'Nunca evalúa condición', 'Condición después de ejecutar'],
+    respuesta: 'Condición después de ejecutar'
+  },
+  {
+    valor: 'while (condición) { ... }',
+    opciones: ['Bucle que puede no ejecutarse', 'Siempre se ejecuta', 'Cierra el programa'],
+    respuesta: 'Bucle que puede no ejecutarse'
+  },
+  {
+    valor: 'do { ... } while (condición);',
+    opciones: ['Evalúa antes de entrar', 'Se ejecuta al menos una vez', 'No se ejecuta nunca'],
+    respuesta: 'Se ejecuta al menos una vez'
+  },
+  {
+    valor: '¿Qué es un bucle infinito?',
+    opciones: ['Termina siempre', 'Nunca se detiene', 'Solo if else'],
+    respuesta: 'Nunca se detiene'
+  },
+  {
+    valor: '¿Cómo evitar bucle infinito en while?',
+    opciones: ['Usar break', 'No usar condiciones', 'Declarar final'],
+    respuesta: 'Usar break'
+  },
+  {
+    valor: '¿Qué es for-each?',
+    opciones: ['Recorre colecciones sin índice', 'Solo para enteros', 'Declara clases'],
+    respuesta: 'Recorre colecciones sin índice'
+  },
+  {
+    valor: '¿Para qué sirve el contador en for?',
+    opciones: ['Condición booleana', 'Controlar iteraciones', 'Declarar variables'],
+    respuesta: 'Controlar iteraciones'
+  },
+  {
+    valor: 'while se usa cuando...',
+    opciones: ['Sabemos el límite', 'No sabemos cuántas veces', 'Declaramos métodos'],
+    respuesta: 'No sabemos cuántas veces'
+  },
+  {
+    valor: 'for es como...',
+    opciones: ['Lavadora', 'Ascensor', 'Puerta'],
+    respuesta: 'Ascensor'
+  },
+  {
+    valor: 'while es como...',
+    opciones: ['Lavadora', 'Ascensor', 'Puerta giratoria'],
+    respuesta: 'Lavadora'
+  },
+  {
+    valor: 'for-each es ideal para...',
+    opciones: ['Índices exactos', 'Recorrer arrays', 'Operadores ternarios'],
+    respuesta: 'Recorrer arrays'
+  },
+  {
+    valor: '¿Qué significa break?',
+    opciones: ['Termina el bucle', 'Empieza bucle', 'Declara variable'],
+    respuesta: 'Termina el bucle'
+  },
+  {
+    valor: 'for (int i=0; i<10; i++)',
+    opciones: ['Inicio-condición-incremento', 'Condición-booleana', 'Declaración-final'],
+    respuesta: 'Inicio-condición-incremento'
+  },
+  {
+    valor: 'while (true) { ... }',
+    opciones: ['Bucle infinito', 'Condicional único', 'Clase abstracta'],
+    respuesta: 'Bucle infinito'
+  },
+  {
+    valor: 'do-while garantiza...',
+    opciones: ['Que no se ejecute nunca', 'Al menos una ejecución', 'Solo condiciones falsas'],
+    respuesta: 'Al menos una ejecución'
+  },
+  {
+    valor: 'for-each se usa para...',
+    opciones: ['Declarar variables', 'Recorrer colecciones', 'Definir clases'],
+    respuesta: 'Recorrer colecciones'
+  }
+],
+metodos : [
+  {
+    valor: '¿Qué es un método en Java?',
+    opciones: ['Una estructura de control', 'Un bloque de código reutilizable', 'Un tipo de dato'],
+    respuesta: 'Un bloque de código reutilizable'
+  },
+  {
+    valor: '¿Para qué sirve un método?',
+    opciones: ['Organizar y reutilizar código', 'Compilar clases', 'Crear bucles infinitos'],
+    respuesta: 'Organizar y reutilizar código'
+  },
+  {
+    valor: '¿Qué indica el modificador static?',
+    opciones: ['Pertenece a la clase', 'Siempre es privado', 'Se ejecuta en bucle'],
+    respuesta: 'Pertenece a la clase'
+  },
+  {
+    valor: 'public void saludar() { ... }',
+    opciones: ['Método sin retorno', 'Bucle infinito', 'Variable local'],
+    respuesta: 'Método sin retorno'
+  },
+  {
+    valor: '¿Qué significa el tipo de retorno void?',
+    opciones: ['Devuelve un valor', 'No devuelve nada', 'Es privado'],
+    respuesta: 'No devuelve nada'
+  },
+  {
+    valor: '¿Qué son los parámetros de un método?',
+    opciones: ['Variables locales', 'Valores que recibe', 'Clases abstractas'],
+    respuesta: 'Valores que recibe'
+  },
+  {
+    valor: '¿Cómo se llama a un método en Java?',
+    opciones: ['Usando su nombre y paréntesis', 'Declarando un bucle', 'Creando una clase'],
+    respuesta: 'Usando su nombre y paréntesis'
+  },
+  {
+    valor: 'int sumar(int a, int b) { return a + b; }',
+    opciones: ['Método sin retorno', 'Método con parámetros y retorno', 'Variable global'],
+    respuesta: 'Método con parámetros y retorno'
+  },
+  {
+    valor: '¿Qué es un argumento?',
+    opciones: ['El valor pasado al llamar al método', 'El nombre del método', 'El modificador de acceso'],
+    respuesta: 'El valor pasado al llamar al método'
+  },
+  {
+    valor: 'private void limpiar() { ... }',
+    opciones: ['Método privado', 'Variable estática', 'Clase abstracta'],
+    respuesta: 'Método privado'
+  },
+  {
+    valor: '¿Qué hace return en un método?',
+    opciones: ['Detiene el programa', 'Devuelve un valor', 'Inicia un bucle'],
+    respuesta: 'Devuelve un valor'
+  },
+  {
+    valor: 'public static void main(String[] args)',
+    opciones: ['Método principal', 'Bucle while', 'Clase abstracta'],
+    respuesta: 'Método principal'
+  },
+  {
+    valor: '¿Qué significa tener parámetros?',
+    opciones: ['No devuelve nada', 'Recibe valores al ser llamado', 'Es siempre estático'],
+    respuesta: 'Recibe valores al ser llamado'
+  },
+  {
+    valor: 'Método con return:',
+    opciones: ['Devuelve un valor', 'Es siempre privado', 'Es un bucle infinito'],
+    respuesta: 'Devuelve un valor'
+  },
+  {
+    valor: 'Método con void:',
+    opciones: ['No devuelve nada', 'Siempre devuelve int', 'Es abstracto'],
+    respuesta: 'No devuelve nada'
+  },
+  {
+    valor: '¿Qué es buena práctica al nombrar métodos?',
+    opciones: ['Usar nombres claros y descriptivos', 'Usar solo letras mayúsculas', 'Evitar nombres largos'],
+    respuesta: 'Usar nombres claros y descriptivos'
+  },
+  {
+    valor: '¿Qué es un método con propósito único?',
+    opciones: ['Hace muchas tareas', 'Solo tiene una responsabilidad', 'Es siempre estático'],
+    respuesta: 'Solo tiene una responsabilidad'
+  },
+  {
+    valor: '¿Qué es un modificador de acceso?',
+    opciones: ['Define visibilidad', 'Declara arrays', 'Crea bucles'],
+    respuesta: 'Define visibilidad'
+  },
+  {
+    valor: 'public int getEdad() { return edad; }',
+    opciones: ['Devuelve un valor', 'No devuelve nada', 'Es abstracto'],
+    respuesta: 'Devuelve un valor'
+  },
+  {
+    valor: '¿Para qué sirve un método en Java?',
+    opciones: ['Reutilizar código', 'Crear variables locales', 'Compilar sin errores'],
+    respuesta: 'Reutilizar código'
+  }
 ]
+
 
 
 

@@ -10,5 +10,8 @@ export type Nivel =
   | 'tipado'
   | 'por_defecto'
   | 'operadores'
+  | 'listas'
+  | 'condicionales'
+  | 'bucles'
+  | 'metodos';
 
-  | 'listas';
