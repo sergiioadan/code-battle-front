@@ -44,13 +44,16 @@ export class LevelSelectionComponent implements OnInit {
         const nivel = this.niveles[i];
         const data = progreso[nivel.clave];
 
-        if (data && data.hits >= 7) {
-          nivel.bloqueado = false;
+        if (data) {
           nivel.aciertos = data.hits;
           nivel.puntuacion = data.points;
-
-          if (i + 1 < this.niveles.length) {
-            this.niveles[i + 1].bloqueado = false;
+        
+          if (data.hits >= 7) {
+            nivel.bloqueado = false;
+        
+            if (i + 1 < this.niveles.length) {
+              this.niveles[i + 1].bloqueado = false;
+            }
           }
         }
       }
